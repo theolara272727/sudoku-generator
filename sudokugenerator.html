@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sudoku Generator</title>
+        <style>
+            #container{
+                background-color: #06011c;
+                font-family:'Courier New', Courier, monospace
+            }
+            #header_title{
+                border: 3px solid white;
+                background-color:#06011c ;
+                color: white;
+                text-align: center;
+                padding-inline: 15px;
+                border-radius: 15px;
+                margin-top: 10px;
+                display: inline-block;
+                filter:drop-shadow(0px 0px 5px);
+            }
+            .box{
+                width: 300px;
+                height: 300px;
+                background-color: white;
+            }
+            .center{
+                display:flex;
+                justify-content: center;
+            }
+            #footnote{
+
+                position: fixed;
+                bottom: 5%;
+                right: 5%;
+                display: flex;
+                flex-direction: row;
+            }
+            .footnote_box #twitter{
+                width: 35px;
+            }
+            .footnote_box #github{
+                width: 30px;
+            }
+            .footnote_text{
+                display: none;
+                opacity: 0;
+                transition: opacity 0.5s;
+                align-content: center;
+            }
+            .footnote_box{
+                background-color: white;
+                display: flex;
+                flex-direction: row;
+                margin: 5px;
+                color:#06011c;
+                width:40px;
+                height: auto;
+                border-radius: 10px;
+                transition:width 0.25s;
+            }
+            .footnote_box:hover  > .footnote_text{
+                display: initial;
+                opacity: 100;
+            }
+            .footnote_box:hover{
+                width: 155px;
+            }
+       
+            .row{
+                color:white;
+                
+
+            }
+            .rowChild{
+                float:left;
+               
+               margin-top: 75px;
+               margin-right: 50px;;
+            }
+            .button_column{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                box-sizing: border-box;
+           }
+           .button_column_child {
+                margin: 10px;
+                color: white;
+                transition: filter 0.5s;
+                width: 100%;
+           }
+          .button_column_child:hover{
+            filter: drop-shadow(0px 0px 5px); 
+          }
+           .action_button{
+                width: 100%;
+                font-family: 'Courier New', Courier, monospace;
+                padding: 15px;
+                font-size: 1.5em;
+                border-radius: 10px;
+                color: #06011c;
+                background-color: white;
+                
+                transition: background-color 0.5s,color 0.5s,border 0.5s,height 0.5s,width 0.5s;
+           }
+           .action_button:hover{
+                background-color: white;
+                color:#06011c;
+               
+           }
+           .numInput{
+            text-align: center;
+            color: blue;
+            width: 30px;
+            height: 34px;
+           }
+
+        </style>
+     </head>
+    <body id="container">
+        <div class="center">
+            <div id="header_title">
+                <h1><strong>sudoku generator</strong></h1>
+            </div>
+        </div>
+            <div class="center">
+                <div class="row">
+                    <div id="sudoku" class="rowChild">
+                        
+                    </div>
+                    <div  class="rowChild">
+                        <div class="button_column">
+                            <div class="button_column_child">
+            
+                                <button id="generateSudoku" class="action_button">
+                                    <strong>Generate Sudoku</strong>
+                                </button>
+                            </div>
+                            <div id="showSudoku" class="button_column_child">
+                                <button class="action_button">
+                                    <strong>Show Solution</strong>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div id="footnote">
+            <a target= "_blank" href="https://www.instagram.com/theo.duarte/">
+                <div class="footnote_box">
+                    <image style="height: 40px;" src="images/instragram_logo.png">
+                    <strong class="footnote_text">@theo_duarte</strong>
+                </div>
+            </a>
+            <a target= "_blank" href="//github.com/theolara272727">
+                <div id="github" style="padding: 3px;" class="footnote_box">
+                    <image style="height: 35px" src="images/github_logo.png">
+                    <strong class="footnote_text">@theo272727</strong>
+                </div>
+            </a>
+            <a target= "_blank" href="https://twitter.com/oduartelara">
+                <div style="padding: 3px;" class="footnote_box" id="twitter">
+                    <image style="height: 35px" src="images/X_logo.avif">
+                        <strong class="footnote_text">@oduartelara</strong>
+                </div>
+            </a>
+         
+        </div>
+        <script src="sudokugenerator.js"></script>
+    </body>
+</html>
